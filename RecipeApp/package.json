@@ -1,5 +1,5 @@
 {
-  "name": "week1",
+  "name": "recipe-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
