@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\week1",
-    "\\week1\\src",
-    "\\week1\\src\\app"
+    "\\RecipeApp",
+    "\\RecipeApp\\src",
+    "\\RecipeApp\\src\\app",
+    "\\RecipeApp\\src\\app\\recipes",
+    "\\RecipeApp\\src\\app\\recipes\\recipe-detail",
+    "\\RecipeApp\\src\\app\\recipes\\recipe-list",
+    "\\RecipeApp\\src\\app\\shared",
+    "\\RecipeApp\\src\\app\\shopping-list",
+    "\\RecipeApp\\src\\app\\shopping-list\\shopping-edit"
   ],
-  "SelectedNode": "\\week1\\angular.json",
+  "SelectedNode": "\\RecipeApp\\src\\app\\shopping-list\\shopping-list.component.ts",
   "PreviewInSolutionExplorer": false
 }
