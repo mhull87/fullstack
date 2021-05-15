@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\cms",
+    "\\cms\\src",
+    "\\cms\\src\\app",
+    "\\cms\\src\\app\\documents",
+    "\\cms\\src\\app\\documents\\document-detail",
     "\\RecipeApp",
     "\\RecipeApp\\src",
     "\\RecipeApp\\src\\app",
-    "\\RecipeApp\\src\\app\\recipes",
-    "\\RecipeApp\\src\\app\\recipes\\recipe-detail",
-    "\\RecipeApp\\src\\app\\recipes\\recipe-list",
-    "\\RecipeApp\\src\\app\\shared",
-    "\\RecipeApp\\src\\app\\shopping-list",
-    "\\RecipeApp\\src\\app\\shopping-list\\shopping-edit"
+    "\\RecipeApp\\src\\app\\shared"
   ],
-  "SelectedNode": "\\RecipeApp\\src\\app\\shopping-list\\shopping-list.component.ts",
+  "SelectedNode": "\\cms\\src\\app\\documents\\document-detail\\document-detail.component.ts",
   "PreviewInSolutionExplorer": false
 }

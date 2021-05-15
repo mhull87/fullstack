@@ -1,3 +1,4 @@
+
 .center-panel {
   margin-left: auto;
   margin-right: auto;
@@ -9,7 +10,7 @@
   font-weight: bold;
 }
 
-.pad-left-right {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.pad-left-right{
+  padding-left:1rem;
+  padding-right:1rem;
 }
