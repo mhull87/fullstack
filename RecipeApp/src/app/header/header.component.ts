@@ -11,5 +11,6 @@ export class HeaderComponent {
 
   onSelect(feature: string) {
     this.featureSelected.emit(feature);
+    this.collapsed = true;
   }
 }

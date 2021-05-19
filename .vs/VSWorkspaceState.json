@@ -4,13 +4,15 @@
     "\\cms",
     "\\cms\\src",
     "\\cms\\src\\app",
-    "\\cms\\src\\app\\documents",
-    "\\cms\\src\\app\\documents\\document-detail",
+    "\\cms\\src\\app\\messages",
+    "\\cms\\src\\app\\messages\\message-edit",
+    "\\cms\\src\\app\\messages\\message-item",
+    "\\cms\\src\\app\\shared",
     "\\RecipeApp",
     "\\RecipeApp\\src",
     "\\RecipeApp\\src\\app",
     "\\RecipeApp\\src\\app\\shared"
   ],
-  "SelectedNode": "\\cms\\src\\app\\documents\\document-detail\\document-detail.component.ts",
+  "SelectedNode": "\\cms\\src\\app\\header.component.ts",
   "PreviewInSolutionExplorer": false
 }
