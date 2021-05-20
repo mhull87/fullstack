@@ -11,8 +11,10 @@
   </div>
   <div class="panel-body">
     <div class="pad-left-right">
-      <div class="row">
-        <label>Description:</label><br />
+      <div *ngIf="document.description" class="row">
+        <label>
+          Description:
+        </label><br />
         <span class="label-value">{{ document.description }}</span>
       </div>
       <br>
