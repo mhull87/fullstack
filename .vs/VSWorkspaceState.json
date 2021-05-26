@@ -4,15 +4,14 @@
     "\\cms",
     "\\cms\\src",
     "\\cms\\src\\app",
-    "\\cms\\src\\app\\messages",
-    "\\cms\\src\\app\\messages\\message-edit",
-    "\\cms\\src\\app\\messages\\message-item",
-    "\\cms\\src\\app\\shared",
-    "\\RecipeApp",
-    "\\RecipeApp\\src",
-    "\\RecipeApp\\src\\app",
-    "\\RecipeApp\\src\\app\\shared"
+    "\\cms\\src\\app\\contacts",
+    "\\cms\\src\\app\\contacts\\contact-detail",
+    "\\cms\\src\\app\\contacts\\contact-list",
+    "\\cms\\src\\app\\contacts\\contact-list\\contact-item",
+    "\\cms\\src\\app\\documents",
+    "\\cms\\src\\app\\documents\\document-detail",
+    "\\cms\\src\\assets\\images"
   ],
-  "SelectedNode": "\\cms\\src\\app\\header.component.ts",
+  "SelectedNode": "\\cms\\src\\app\\documents\\MOCKDOCUMENTS.ts",
   "PreviewInSolutionExplorer": false
 }
