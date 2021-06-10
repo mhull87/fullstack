@@ -5,12 +5,13 @@
     "\\cms\\src",
     "\\cms\\src\\app",
     "\\cms\\src\\app\\contacts",
-    "\\cms\\src\\app\\contacts\\contact-edit",
-    "\\cms\\src\\app\\documents",
-    "\\cms\\src\\app\\documents\\document-detail",
+    "\\cms\\src\\app\\contacts\\contact-list",
     "\\cms\\src\\app\\documents\\document-list",
-    "\\cms\\src\\app\\documents\\document-list\\document-item"
+    "\\RecipeApp",
+    "\\RecipeApp\\src",
+    "\\RecipeApp\\src\\app",
+    "\\RecipeApp\\src\\app\\recipes"
   ],
-  "SelectedNode": "\\cms\\src\\app\\contacts\\contact-detail\\contact-detail.component.ts",
+  "SelectedNode": "\\cms\\src\\app\\contacts\\contact-edit\\contact-edit.component.html",
   "PreviewInSolutionExplorer": false
 }
