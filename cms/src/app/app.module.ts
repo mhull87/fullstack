@@ -18,9 +18,13 @@ import { MessageEditComponent } from './messages/message-edit/message-edit.compo
 import { MessageListComponent } from './messages/message-list/message-list.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ContactService } from './contacts/contact.service';
+import { MessageService } from './messages/message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { DndModule } from 'ng2-dnd';
+import { DocumentService } from './documents/document.service';
+import { WindRefService } from './wind-ref.service';
 
 @NgModule({
   declarations: [
@@ -45,9 +49,10 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DndModule.forRoot()
   ],
-  providers: [ContactService],
+  providers: [ContactService, MessageService, DocumentService, WindRefService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

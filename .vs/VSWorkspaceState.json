@@ -4,14 +4,14 @@
     "\\cms",
     "\\cms\\src",
     "\\cms\\src\\app",
-    "\\cms\\src\\app\\contacts",
-    "\\cms\\src\\app\\contacts\\contact-list",
-    "\\cms\\src\\app\\documents\\document-list",
+    "\\cms\\src\\app\\documents",
+    "\\cms\\src\\app\\documents\\document-edit",
     "\\RecipeApp",
     "\\RecipeApp\\src",
     "\\RecipeApp\\src\\app",
-    "\\RecipeApp\\src\\app\\recipes"
+    "\\RecipeApp\\src\\app\\recipes",
+    "\\RecipeApp\\src\\app\\shopping-list"
   ],
-  "SelectedNode": "\\cms\\src\\app\\contacts\\contact-edit\\contact-edit.component.html",
+  "SelectedNode": "\\cms\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

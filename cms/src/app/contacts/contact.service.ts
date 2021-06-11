@@ -17,6 +17,7 @@ export class ContactService {
 
   constructor() {
     this.contacts = MOCKCONTACTS;
+    this.maxContactId = this.getMaxId();
   }
 
   getContacts() {
@@ -60,7 +61,7 @@ export class ContactService {
       return;
     }
     this.maxContactId++;
-    this.newContact.id = this.maxContactId.toString();
+    newContact.id = this.maxContactId.toString();
     this.contacts.push(newContact);
     this.contactsListClone = this.contacts.slice();
     this.contactListChangedEvent.next(this.contactsListClone);
