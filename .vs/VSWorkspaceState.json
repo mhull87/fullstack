@@ -6,13 +6,11 @@
     "\\cms\\src\\app",
     "\\cms\\src\\app\\contacts",
     "\\cms\\src\\app\\contacts\\contact-list",
-    "\\cms\\src\\app\\contacts\\contact-list\\contact-item",
-    "\\lesson8Files",
-    "\\RecipeApp",
-    "\\RecipeApp\\src",
-    "\\RecipeApp\\src\\app",
-    "\\RecipeApp\\src\\app\\shopping-list",
-    "\\RecipeApp\\src\\app\\shopping-list\\shopping-edit"
+    "\\cms\\src\\app\\messages",
+    "\\cms\\src\\app\\messages\\message-item",
+    "\\cms\\src\\app\\messages\\message-list",
+    "\\cms\\src\\assets\\images"
   ],
+  "SelectedNode": "\\cms\\src\\app\\app.component.spec.ts",
   "PreviewInSolutionExplorer": false
 }

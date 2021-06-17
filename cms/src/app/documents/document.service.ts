@@ -31,9 +31,9 @@ export class DocumentService {
           this.maxDocumentId = this.getMaxId();
 
           documents.sort((a, b) => {
-            if (a.name < b.name) {
+            if (a.name.toUpperCase() < b.name.toUpperCase()) {
               return -1;
-            } if (a.name > b.name) {
+            } if (a.name.toUpperCase() > b.name.toUpperCase()) {
               return 1;
             } else {
               return 0;
@@ -95,10 +95,11 @@ export class DocumentService {
     this.documents.push(newDocument);
     this.documentsListClone = this.documents.slice();
     this.storeDocuments();
+
     this.documents.sort((a, b) => {
-      if (a.name < b.name) {
+      if (a.name.toUpperCase() < b.name.toUpperCase()) {
         return -1;
-      } if (a.name > b.name) {
+      } if (a.name.toUpperCase() > b.name.toUpperCase()) {
         return 1;
       } else {
         return 0;
@@ -120,9 +121,9 @@ export class DocumentService {
     this.storeDocuments();
 
     this.documents.sort((a, b) => {
-      if (a.name < b.name) {
+      if (a.name.toUpperCase()< b.name.toUpperCase()) {
         return -1;
-      } if (a.name > b.name) {
+      } if (a.name.toUpperCase() > b.name.toUpperCase()) {
         return 1;
       } else {
         return 0;

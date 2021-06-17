@@ -30,9 +30,9 @@ export class ContactService {
           this.maxContactId = this.getMaxId();
 
           contacts.sort((a, b) => {
-            if (a.name < b.name) {
+            if (a.name.toUpperCase() < b.name.toUpperCase()) {
               return -1;
-            } if (a.name > b.name) {
+            } if (a.name.toUpperCase() > b.name.toUpperCase()) {
               return 1;
             } else {
               return 0;
@@ -94,6 +94,16 @@ export class ContactService {
     this.contacts.push(newContact);
     this.contactsListClone = this.contacts.slice();
     this.storeContacts();
+
+    this.contacts.sort((a, b) => {
+      if (a.name.toUpperCase() < b.name.toUpperCase()) {
+        return -1;
+      } if (a.name.toUpperCase() > b.name.toUpperCase()) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
 
   updateContact(origionalContact: Contact, newContact: Contact) {
@@ -110,9 +120,9 @@ export class ContactService {
     this.storeContacts();
 
     this.contacts.sort((a, b) => {
-      if (a.name < b.name) {
+      if (a.name.toUpperCase() < b.name.toUpperCase()) {
         return -1;
-      } if (a.name > b.name) {
+      } if (a.name.toUpperCase() > b.name.toUpperCase()) {
         return 1;
       } else {
         return 0;
