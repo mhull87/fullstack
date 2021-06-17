@@ -1,27 +1,57 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Document } from './document.model';
-import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
+//import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentService {
   documentSelectedEvent = new EventEmitter<Document>();
-  documents: Document[];
+  documents: Document[] = [];
 //  documentChangedEvent = new EventEmitter<Document[]>();
   documentListChangedEvent = new Subject<Document[]>();
   maxDocumentId: number;
-    newDocument: Document;
-    documentsListClone: Document[];
+  newDocument: Document;
+  documentsListClone: Document[] = [];
 
-  constructor() {
-    this.documents = MOCKDOCUMENTS;
-    this.maxDocumentId = this.getMaxId();
+  constructor(private http: HttpClient) {
+   // this.documents = MOCKDOCUMENTS;
+   // this.maxDocumentId = this.getMaxId();
   }
 
   getDocuments() {
-    return this.documents.slice();
+    return this.http.get<Document[]>
+      ('https://melissahullcms-84fb8-default-rtdb.firebaseio.com/documents.json')
+      .subscribe(
+        (documents: Document[]) => {
+          this.documents = documents;
+          this.maxDocumentId = this.getMaxId();
+
+          documents.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1;
+            } if (a.name > b.name) {
+              return 1;
+            } else {
+              return 0;
+            }
+          });
+          this.documentListChangedEvent.next(this.documents.slice());
+        },
+        (error: any) => {
+          console.log(error);
+        });
+  }
+
+  storeDocuments() {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http.put('https://melissahullcms-84fb8-default-rtdb.firebaseio.com/documents.json', this.documents, { headers })
+      .subscribe(() => {
+        this.documentListChangedEvent.next(this.documents.slice());
+      });
   }
 
   getDocument(id: string) {
@@ -42,7 +72,7 @@ export class DocumentService {
       return;
     }
     this.documents.splice(pos, 1);
-    this.documentListChangedEvent.next(this.documents.slice());
+    this.storeDocuments();
   }
 
   getMaxId() {
@@ -64,7 +94,16 @@ export class DocumentService {
     newDocument.id = this.maxDocumentId.toString();
     this.documents.push(newDocument);
     this.documentsListClone = this.documents.slice();
-    this.documentListChangedEvent.next(this.documentsListClone);
+    this.storeDocuments();
+    this.documents.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      } if (a.name > b.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
 
   updateDocument(origionalDocument: Document, newDocument: Document) {
@@ -78,7 +117,17 @@ export class DocumentService {
     newDocument.id = origionalDocument.id;
     this.documents[pos] = newDocument;
     this.documentsListClone = this.documents.slice();
-    this.documentListChangedEvent.next(this.documentsListClone);
+    this.storeDocuments();
+
+    this.documents.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      } if (a.name > b.name) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
 
 }

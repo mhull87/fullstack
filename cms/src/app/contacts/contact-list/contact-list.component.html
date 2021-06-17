@@ -1,14 +1,34 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <span class="pull-left h4"><strong>Contacts</strong></span>
-    <a routerLink="new" class="btn btn-success pull-right">New Contact</a>
-    <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <span style="margin-left:5px" class="title pad-left-right h3"><strong>Contacts</strong></span>
+          </div>
+          <div class="row">
+            <div class="input-group pull-left pad-left-right col-xs-7">
+              <input
+                     style="margin:5px"
+                     #searchBox
+                     (keyup)="search(searchBox.value)"
+                     class="form-control"
+                     placeholder="Enter a search value"
+                     type="text" />
+            </div>
+            <div class="pull-right pad-left-right">
+              <a class="btn btn-success" style="margin-right:5px" [routerLink]="['new']">New Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-xs-12">
         <cms-contact-item
-          *ngFor="let contactEl of contacts"
+          *ngFor="let contactEl of contacts | contactsFilter:searchBox.value:'term'"
           [contact]="contactEl"
           [id]="contactEl.id"
           dnd-draggable
