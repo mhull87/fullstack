@@ -6,11 +6,11 @@
     "\\cms\\src\\app",
     "\\cms\\src\\app\\contacts",
     "\\cms\\src\\app\\contacts\\contact-list",
+    "\\cms\\src\\app\\documents",
     "\\cms\\src\\app\\messages",
     "\\cms\\src\\app\\messages\\message-item",
-    "\\cms\\src\\app\\messages\\message-list",
-    "\\cms\\src\\assets\\images"
+    "\\cms\\src\\app\\messages\\message-list"
   ],
-  "SelectedNode": "\\cms\\src\\app\\app.component.spec.ts",
+  "SelectedNode": "\\cms\\src\\app\\contacts\\contact.service.ts",
   "PreviewInSolutionExplorer": false
 }
