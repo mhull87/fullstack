@@ -1,18 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cms\\src",
-    "\\cms\\src\\app",
-    "\\cms\\src\\app\\messages",
-    "\\cms\\src\\app\\messages\\message-list",
+    "\\cms",
+    "\\cms\\server",
+    "\\cms\\server\\routes",
     "\\RecipeApp",
     "\\RecipeApp\\src",
     "\\RecipeApp\\src\\app",
-    "\\RecipeApp\\src\\app\\auth",
     "\\RecipeApp\\src\\app\\header",
     "\\RecipeApp\\src\\app\\shared",
     "\\RecipeApp\\src\\app\\shared\\loading-spinner"
   ],
-  "SelectedNode": "\\RecipeApp\\src\\app\\auth\\user.model.ts",
+  "SelectedNode": "\\cms\\server.js",
   "PreviewInSolutionExplorer": false
 }
