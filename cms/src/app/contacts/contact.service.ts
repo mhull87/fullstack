@@ -23,13 +23,21 @@ export class ContactService {
 
   getContacts() {
     return this.http.get<Contact[]>
-      ('https://melissahullcms-84fb8-default-rtdb.firebaseio.com/contacts.json')
+      ('http://localhost:3300/contacts')
       .subscribe(
         (contacts: Contact[]) => {
           this.contacts = contacts;
           this.maxContactId = this.getMaxId();
+          this.sortAndSend();
 
-          contacts.sort((a, b) => {
+        },
+        (error: any) => {
+          console.log(error);
+        });
+  }
+
+  sortAndSend() {
+          this.contacts.sort((a, b) => {
             if (a.name.toUpperCase() < b.name.toUpperCase()) {
               return -1;
             } if (a.name.toUpperCase() > b.name.toUpperCase()) {
@@ -39,10 +47,6 @@ export class ContactService {
             }
           });
           this.contactListChangedEvent.next(this.contacts.slice());
-        },
-        (error: any) => {
-          console.log(error);
-        });
   }
 
   storeContacts() {
@@ -66,18 +70,27 @@ export class ContactService {
     if (!contact) {
       return;
     }
-    const pos = this.contacts.indexOf(contact);
+
+    const pos = this.contacts.findIndex(d => d.id === contact.id);
+
     if (pos < 0) {
       return;
     }
-    this.contacts.splice(pos, 1);
-    this.storeContacts();
+
+    //delete from database
+    this.http.delete('http://localhost:3300/contacts/' + contact.id)
+      .subscribe(
+        (response: Response) => {
+          this.contacts.splice(pos, 1);
+          this.sortAndSend();
+        }
+      );
   }
 
-  getMaxId() {
+  getMaxId(): number {
     var maxId = 0;
     for (let contact of this.contacts) {
-      var currentId = parseInt(contact.id);
+      var currentId = +contact.id;
       if (currentId > maxId) {
         maxId = currentId;
       }
@@ -89,45 +102,51 @@ export class ContactService {
     if (!newContact) {
       return;
     }
-    this.maxContactId++;
-    newContact.id = this.maxContactId.toString();
-    this.contacts.push(newContact);
-    this.contactsListClone = this.contacts.slice();
-    this.storeContacts();
 
-    this.contacts.sort((a, b) => {
-      if (a.name.toUpperCase() < b.name.toUpperCase()) {
-        return -1;
-      } if (a.name.toUpperCase() > b.name.toUpperCase()) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
+    //make sure id of the new Contact is empty
+    newContact.id = '';
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    //add to databasee
+    this.http.post<{ message: string, newContact: Contact }>
+      ('http://localhost:3300/contacts', newContact, { headers: headers })
+      .subscribe(
+        (responseData) => {
+          //add new contact to contacts
+          this.contacts.push(responseData.newContact);
+          this.sortAndSend();
+        }
+      );
+
   }
 
   updateContact(origionalContact: Contact, newContact: Contact) {
     if (!origionalContact || !newContact) {
       return;
     }
-    const pos = this.contacts.indexOf(origionalContact);
+
+    const pos = this.contacts.findIndex(d => d.id === origionalContact.id);
+
     if (pos < 0) {
       return;
     }
-    newContact.id = origionalContact.id;
-    this.contacts[pos] = newContact;
-    this.contactsListClone = this.contacts.slice();
-    this.storeContacts();
 
-    this.contacts.sort((a, b) => {
-      if (a.name.toUpperCase() < b.name.toUpperCase()) {
-        return -1;
-      } if (a.name.toUpperCase() > b.name.toUpperCase()) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
+    // set the id of the new Contact to the id of the old Contact
+    newContact.id = origionalContact.id;
+    // newContact._id = origionalContact._id;
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    //update database
+    this.http.put('http://localhost:3300/contacts/' + origionalContact.id,
+      newContact, { headers: headers })
+      .subscribe(
+        (response: Response) => {
+          this.contacts[pos] = newContact;
+          this.sortAndSend();
+        }
+      )
   }
 
 }

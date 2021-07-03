@@ -47,6 +47,7 @@
                  #phone="ngModel"
                  [ngModel]="contact?.phone"
                  pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*">
+
           <div *ngIf="phone.touched && phone.invalid" class="alert alert-danger">Enter a valid Phone number.</div>
         </div>
       </div>

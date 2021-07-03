@@ -1,13 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\backend",
+    "\\backend\\models",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\header",
     "\\src\\app\\posts",
     "\\src\\app\\posts\\post-create",
     "\\src\\app\\posts\\post-list"
   ],
-  "SelectedNode": "\\src\\app\\posts\\post-list\\post-list.component.html",
   "PreviewInSolutionExplorer": false
 }

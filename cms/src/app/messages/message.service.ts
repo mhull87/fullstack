@@ -21,6 +21,7 @@ export class MessageService {
   getMaxId() {
     var maxId = 0;
     for (let message of this.messages) {
+      JSON.stringify(message);
       var currentId = parseInt(message.id);
       if (currentId > maxId) {
         maxId = currentId;
@@ -31,16 +32,16 @@ export class MessageService {
 
   getMessages() {
     return this.http.get<Message[]>
-      ('https://melissahullcms-84fb8-default-rtdb.firebaseio.com/messages.json')
-      .subscribe(
-        (messages: Message[]) => {
-          this.messages = messages;
-          this.maxMessageId = this.getMaxId();
-          this.messageChangedEvent.next(this.messages.slice());
-        },
-        (error: any) => {
-          console.log(error);
-        });
+      ('http://localhost:3300/messages')
+        .subscribe(
+          (messages: Message[]) => {
+            this.messages = messages;
+            this.maxMessageId = this.getMaxId();
+            this.messageChangedEvent.next(this.messages.slice());
+          },
+          (error: any) => {
+            console.log(error);
+          });
   }
 
   storeMessages() {
@@ -60,10 +61,22 @@ export class MessageService {
     return null;
   }
 
-  addMessage(message: Message) {
-    this.maxMessageId++;
-    message.id = this.maxMessageId.toString();
-    this.messages.push(message);
-    this.storeMessages();
+  addMessage(newMessage: Message) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    //add to database
+    this.http.post<{ message: string, newMessage: Message }>
+      ('http://localhost:3300/messages', newMessage, { headers: headers })
+      .subscribe(
+        (responseData) => {
+          //add new message to messages
+          this.messages.push(responseData.newMessage);
+          // this.sortAndSend();
+        }
+      );
   }
 }
+
+//    this.maxMessageId++;
+//    message.id = this.maxMessageId.toString();
+

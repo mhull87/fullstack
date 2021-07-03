@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cms",
-    "\\cms\\server",
-    "\\cms\\server\\routes",
-    "\\RecipeApp",
-    "\\RecipeApp\\src",
-    "\\RecipeApp\\src\\app",
-    "\\RecipeApp\\src\\app\\header",
-    "\\RecipeApp\\src\\app\\shared",
-    "\\RecipeApp\\src\\app\\shared\\loading-spinner"
+    "\\errors-04-finished",
+    "\\errors-04-finished\\backend",
+    "\\errors-04-finished\\backend\\routes",
+    "\\mean-course\\src",
+    "\\mean-course\\src\\app",
+    "\\mean-course\\src\\app\\posts",
+    "\\mongodb-03-finished\\src",
+    "\\mongodb-03-finished\\src\\app",
+    "\\mongodb-03-finished\\src\\app\\posts"
   ],
-  "SelectedNode": "\\cms\\server.js",
+  "SelectedNode": "\\errors-04-finished\\backend\\routes\\posts.js",
   "PreviewInSolutionExplorer": false
 }
