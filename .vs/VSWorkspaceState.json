@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\errors-04-finished",
-    "\\errors-04-finished\\backend",
-    "\\errors-04-finished\\backend\\routes",
-    "\\mean-course\\src",
-    "\\mean-course\\src\\app",
-    "\\mean-course\\src\\app\\posts",
-    "\\mongodb-03-finished\\src",
-    "\\mongodb-03-finished\\src\\app",
-    "\\mongodb-03-finished\\src\\app\\posts"
+    "\\cms",
+    "\\cms\\server",
+    "\\cms\\server\\routes",
+    "\\cms\\src",
+    "\\cms\\src\\app",
+    "\\cms\\src\\app\\contacts",
+    "\\cms\\src\\app\\messages",
+    "\\cms\\src\\app\\messages\\message-edit",
+    "\\cms\\src\\app\\messages\\message-list"
   ],
-  "SelectedNode": "\\errors-04-finished\\backend\\routes\\posts.js",
+  "SelectedNode": "\\cms\\server\\routes\\sequenceGenerator.js",
   "PreviewInSolutionExplorer": false
 }

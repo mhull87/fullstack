@@ -45,7 +45,7 @@ router.put('/:id', (req, res, next) => {
   Document.findOne({ id: req.params.id })
     .then(document => {
       document.name = req.body.name;
-      doucment.description = req.body.description;
+      document.description = req.body.description;
       document.url = req.body.url;
 
       Document.updateOne({ id: req.params.id }, document)

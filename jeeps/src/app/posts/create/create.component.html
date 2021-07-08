@@ -1,0 +1,26 @@
+<h2>Our Awesome Adventure</h2>
+<hr />
+<label for="date">Date</label>
+<br />
+<input name="date" type="date" />
+<br /><br />
+<label for="location">Location</label>
+<br />
+<input name="location" type="text" />
+<br /><br />
+<label for="entry">Entry</label>
+<br />
+<textarea name="entry"
+          [value]="'How was your trip?'"
+          rows="8"
+          #entry></textarea>
+
+<br /><br />
+
+      <label for="photo">Photo</label>
+      <br />
+      <input type="text" name="photo" />
+      <br /><br />
+
+<button (click)="onSave(entry)">Save</button>
+<p>{{ newPost }}</p>
