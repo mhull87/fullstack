@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Post } from '../post.model';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-create',
@@ -6,13 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  newPost = '';
+  date = '';
+  location = '';
+  entry = '';
+  photo = '';
 
-  constructor() { }
+  constructor(public postsService: PostsService) { }
 
-  onSave(entry: HTMLTextAreaElement) {
-    console.dir(entry);
-    this.newPost = entry.value;
+  onSave(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+
+    this.postsService.addPost(form.value.date, form.value.location, form.value.entry, form.value.photo);
+    form.resetForm();
   }
 
   ngOnInit(): void {

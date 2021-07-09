@@ -1,26 +1,60 @@
-<h2>Our Awesome Adventure</h2>
-<hr />
-<label for="date">Date</label>
-<br />
-<input name="date" type="date" />
-<br /><br />
-<label for="location">Location</label>
-<br />
-<input name="location" type="text" />
-<br /><br />
-<label for="entry">Entry</label>
-<br />
-<textarea name="entry"
-          [value]="'How was your trip?'"
-          rows="8"
-          #entry></textarea>
+<form (submit)="onSave(postForm)" #postForm="ngForm">
 
-<br /><br />
+  <mat-card>
+    <mat-form-field>
+      <mat-label for="date">Date</mat-label>
+      <input matInput
+             name="date"
+             type="date"
+             #date="ngModel"
+             ngModel
+             required />
+      <mat-error *ngIf="date.invalid">Date is required</mat-error>
+    </mat-form-field>
 
-      <label for="photo">Photo</label>
-      <br />
-      <input type="text" name="photo" />
-      <br /><br />
+    <br />
 
-<button (click)="onSave(entry)">Save</button>
-<p>{{ newPost }}</p>
+    <mat-form-field>
+      <mat-label for="location">Location</mat-label>
+      <input matInput
+             name="location"
+             type="text"
+             #location="ngModel"
+             ngModel
+             required />
+      <mat-error *ngIf="location.invalid">Location is required</mat-error>
+
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card>
+    <mat-form-field class="textarea">
+      <mat-label for="entry">Entry</mat-label>
+      <textarea matInput
+                name="entry"
+                rows="8"
+                ngModel
+                #entry
+                required></textarea>
+      <mat-error *ngIf="entry.invalid">Entry is required</mat-error>
+
+
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card>
+    <mat-form-field>
+      <mat-label for="photo">Photo</mat-label>
+      <input matInput
+             type="text"
+             name="photo"
+             ngModel />
+    </mat-form-field>
+
+    <br /><br />
+
+    <button mat-raised-button
+            color="primary"
+            type="submit">Save</button>
+  </mat-card>
+</form>

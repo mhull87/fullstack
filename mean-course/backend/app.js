@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const cors = require('cors');
 
 const Post = require("./models/post");
 
@@ -19,7 +18,6 @@ mongoose
     console.log("Connection failed!");
   });
 
-app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
