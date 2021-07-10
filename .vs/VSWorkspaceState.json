@@ -6,11 +6,11 @@
     "\\cms\\server\\routes",
     "\\cms\\src",
     "\\cms\\src\\app",
-    "\\cms\\src\\app\\contacts",
-    "\\cms\\src\\app\\messages",
-    "\\cms\\src\\app\\messages\\message-edit",
-    "\\cms\\src\\app\\messages\\message-list"
+    "\\cms\\src\\app\\shared",
+    "\\jeeps",
+    "\\jeeps\\backend",
+    "\\jeeps\\backend\\models"
   ],
-  "SelectedNode": "\\cms\\server\\routes\\sequenceGenerator.js",
+  "SelectedNode": "\\cms\\server\\routes\\documents.js",
   "PreviewInSolutionExplorer": false
 }

@@ -4,7 +4,7 @@ const postSchema = mongoose.Schema({
   date: { type: String, required: true },
   location: { type: String, required: true },
   entry: { type: String, required: true },
-  photo: String
+  imagePath: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Post', postSchema);

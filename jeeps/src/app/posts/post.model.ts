@@ -3,5 +3,5 @@ export interface Post {
   date: string;
   location: string;
   entry: string;
-  photo: string;
+  imagePath: string;
 }

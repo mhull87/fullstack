@@ -1,3 +1,15 @@
 <mat-toolbar color="accent">
- Jeep Diary
+  <span>
+    <a class='mat-display-1'
+       routerLink="/">Jeep Diary</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-flat-button
+         color='primary'
+         routerLink="/create"
+         routerLinkActive="mat-button-disabled">New Entry</a>
+    </li>
+  </ul>
 </mat-toolbar>
