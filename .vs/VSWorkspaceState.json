@@ -3,17 +3,14 @@
     "",
     "\\jeeps",
     "\\jeeps\\backend",
-    "\\jeeps\\backend\\images",
     "\\jeeps\\backend\\models",
+    "\\jeeps\\backend\\routes",
     "\\jeeps\\src",
     "\\jeeps\\src\\app",
     "\\jeeps\\src\\app\\posts",
-    "\\jeeps\\src\\app\\posts\\post-list",
-    "\\mean-course\\src",
-    "\\mean-course\\src\\app",
-    "\\mean-course\\src\\app\\posts",
-    "\\mean-course\\src\\app\\posts\\post-create"
+    "\\jeeps\\src\\app\\posts\\create",
+    "\\jeeps\\src\\app\\posts\\post-list"
   ],
-  "SelectedNode": "\\jeeps\\backend\\images\\2021-07-09-1625889891429.jpg",
+  "SelectedNode": "\\jeeps\\src\\app\\posts\\create\\create.component.ts",
   "PreviewInSolutionExplorer": false
 }
