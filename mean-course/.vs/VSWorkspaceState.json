@@ -2,14 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\backend",
+    "\\backend\\controllers",
     "\\backend\\routes",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\auth",
-    "\\src\\app\\header",
-    "\\src\\app\\posts\\post-create",
-    "\\src\\app\\posts\\post-list"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src\\app\\auth\\auth.service.ts",
+  "SelectedNode": "\\backend\\routes\\posts.js",
   "PreviewInSolutionExplorer": false
 }
