@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\header",
     "\\src\\app\\recipes",
-    "\\src\\app\\recipes\\recipe-detail",
-    "\\src\\app\\recipes\\recipe-list",
-    "\\src\\app\\recipes\\recipe-list\\recipe-item",
+    "\\src\\app\\recipes\\recipe-edit",
+    "\\src\\app\\shared\\alert",
+    "\\src\\app\\shared\\placeholder",
     "\\src\\app\\shopping-list",
-    "\\src\\app\\shopping-list\\shopping-edit"
+    "\\src\\app\\shopping-list\\shopping-edit",
+    "\\src\\app\\shopping-list\\store"
   ],
-  "SelectedNode": "\\src\\app\\header\\header.component.ts",
+  "SelectedNode": "\\src\\app\\core.module.ts",
   "PreviewInSolutionExplorer": false
 }
